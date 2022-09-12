@@ -21,12 +21,10 @@ export class DashboardComponent {
   dataSource = new PostDataSource(this.dataService);
 
   deletePost(id: number) {
-    if (this.auth.isAuthenticated()) {
+    
       this.dataService.deletePost(id);
       this.dataSource = new PostDataSource(this.dataService);
-    } else {
-      alert('Login in Before');
-    }
+   
   }
 
   openDialog(): void {
